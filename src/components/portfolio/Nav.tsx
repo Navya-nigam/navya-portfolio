@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Moon, Sun, Menu, X } from "lucide-react";
+import { Moon, Sun, Menu, X, ArrowRight } from "lucide-react";
 
 const links = [
   { href: "#about", label: "About" },
