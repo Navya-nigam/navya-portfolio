@@ -17,15 +17,14 @@ export function Section({
     <section id={id} className={`relative py-24 md:py-32 ${className}`}>
       <div className="mx-auto max-w-6xl px-5">
         {(eyebrow || title) && (
-          <div className="mb-12 md:mb-16 flex flex-col gap-3">
+          <div className="mb-12 md:mb-16 flex flex-col gap-4">
             {eyebrow && (
-              <div className="flex items-center gap-3 font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground">
-                <span className="h-px w-8 bg-foreground/30" />
+              <p className="font-display italic text-2xl md:text-3xl text-lime">
                 {eyebrow}
-              </div>
+              </p>
             )}
             {title && (
-              <h2 className="font-display text-5xl md:text-7xl leading-[0.95] text-balance max-w-3xl">
+              <h2 className="font-sans font-extrabold tracking-[-0.03em] text-4xl md:text-6xl lg:text-7xl leading-[0.95] text-balance max-w-4xl">
                 {title}
               </h2>
             )}

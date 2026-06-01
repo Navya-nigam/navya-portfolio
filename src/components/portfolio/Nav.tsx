@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Moon, Sun, Menu, X } from "lucide-react";
+import { Moon, Sun, Menu, X, ArrowRight } from "lucide-react";
 
 const links = [
   { href: "#about", label: "About" },
@@ -39,25 +39,35 @@ export function Nav() {
   return (
     <header
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
-        scrolled ? "py-3" : "py-5"
+        scrolled ? "py-3" : "py-6 md:py-8"
       }`}
     >
       <div
-        className={`mx-auto flex max-w-6xl items-center justify-between px-5 transition-all ${
-          scrolled ? "glass rounded-full py-2 px-4 md:px-6" : ""
+        className={`mx-auto flex items-center justify-between transition-all ${
+          scrolled
+            ? "max-w-5xl glass rounded-full py-2.5 px-4 md:px-6"
+            : "max-w-[1400px] px-8 md:px-14"
         }`}
-        style={scrolled ? { maxWidth: "min(72rem, calc(100% - 1.5rem))" } : undefined}
       >
-        <a href="#top" className="font-display text-2xl italic tracking-tight">
-          Navya<span className="text-accent">.</span>
+        <a
+          href="#top"
+          className={`font-display text-2xl md:text-[1.6rem] tracking-tight ${
+            scrolled ? "" : "text-white"
+          }`}
+        >
+          Navya<sup className="text-[0.55em] ml-0.5">®</sup>
         </a>
 
-        <nav className="hidden md:flex items-center gap-8 text-sm">
+        <nav
+          className={`hidden md:flex items-center gap-9 text-sm ${
+            scrolled ? "text-foreground/80" : "text-white/80"
+          }`}
+        >
           {links.map((l) => (
             <a
               key={l.href}
               href={l.href}
-              className="text-muted-foreground hover:text-foreground transition-colors"
+              className="hover:text-lime transition-colors"
             >
               {l.label}
             </a>
@@ -68,19 +78,26 @@ export function Nav() {
           <button
             onClick={toggleDark}
             aria-label="Toggle theme"
-            className="grid place-items-center h-10 w-10 rounded-full hover:bg-muted transition-colors"
+            className={`grid place-items-center h-10 w-10 rounded-full transition-colors ${
+              scrolled ? "hover:bg-muted" : "text-white hover:bg-white/10"
+            }`}
           >
             {dark ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
           </button>
           <a
             href="#contact"
-            className="hidden md:inline-flex items-center rounded-full bg-foreground px-5 py-2.5 text-sm font-medium text-background hover:opacity-90 transition"
+            className="hidden md:inline-flex items-center gap-2 rounded-full bg-white text-[oklch(0.18_0.03_155)] pl-5 pr-1.5 py-1.5 text-sm font-semibold hover:gap-3 transition-all"
           >
-            Contact
+            Get in touch
+            <span className="grid place-items-center h-8 w-8 rounded-full bg-accent text-[oklch(0.18_0.03_155)]">
+              <ArrowRight className="h-3.5 w-3.5" />
+            </span>
           </a>
           <button
             onClick={() => setOpen(!open)}
-            className="md:hidden grid place-items-center h-10 w-10 rounded-full hover:bg-muted"
+            className={`md:hidden grid place-items-center h-10 w-10 rounded-full ${
+              scrolled ? "hover:bg-muted" : "text-white hover:bg-white/10"
+            }`}
             aria-label="Menu"
           >
             {open ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
