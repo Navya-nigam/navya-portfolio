@@ -188,8 +188,25 @@
   .bg-warm-gradient {
     background: var(--gradient-warm);
   }
+  .bg-forest {
+    background: var(--forest);
+    color: oklch(0.97 0.012 90);
+  }
+  .bg-forest-gradient {
+    background: var(--gradient-warm);
+    color: oklch(0.97 0.012 90);
+  }
+  .bg-cream {
+    background: var(--cream);
+  }
   .bg-accent-gradient {
     background: var(--gradient-accent);
+  }
+  .text-lime {
+    color: var(--lime);
+  }
+  .border-lime {
+    border-color: var(--lime);
   }
   .shadow-soft {
     box-shadow: var(--shadow-soft);
