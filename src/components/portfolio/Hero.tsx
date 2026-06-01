@@ -51,24 +51,24 @@ export function Hero() {
       <div className="relative mx-auto max-w-6xl px-5">
         {/* Stage: portrait centered, serif greeting overlays on top */}
         <div className="relative">
-          {/* Portrait */}
-          <div className="flex justify-center">
+          {/* Serif greeting — BEHIND the portrait */}
+          <h1 className="pointer-events-none absolute z-0 inset-x-0 top-[12%] md:top-[16%] font-display text-[18vw] md:text-[11rem] leading-[0.9] text-center text-balance text-foreground">
+            <span className="italic">Hey,</span>{" "}
+            <span className="italic">there</span>
+          </h1>
+
+          {/* Portrait — IN FRONT of the greeting */}
+          <div className="relative z-10 flex justify-center">
             <img
               src={heroImg}
               alt="Navya Nigam — Data Science enthusiast"
               width={1024}
               height={1024}
               fetchPriority="high"
-              className="relative z-0 w-[60vw] max-w-[440px] md:w-[420px] aspect-square object-cover object-top rounded-t-[45%] rounded-b-3xl"
+              className="w-[60vw] max-w-[440px] md:w-[420px] aspect-square object-cover object-top rounded-t-[45%] rounded-b-3xl"
               style={{ maskImage: "linear-gradient(to bottom, black 85%, transparent)" }}
             />
           </div>
-
-          {/* Serif greeting — in FRONT of the portrait */}
-          <h1 className="pointer-events-none absolute z-20 inset-x-0 top-[12%] md:top-[16%] font-display text-[18vw] md:text-[11rem] leading-[0.9] text-center text-balance text-foreground">
-            <span className="italic">Hey,</span>{" "}
-            <span className="italic">there</span>
-          </h1>
 
           {/* Flanking copy — bottom corners */}
           <div className="absolute z-20 left-0 bottom-[12%] md:bottom-[20%] max-w-[44%]">
