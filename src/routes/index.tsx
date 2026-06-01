@@ -1,29 +1,53 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Nav } from "@/components/portfolio/Nav";
+import { Hero } from "@/components/portfolio/Hero";
+import { About } from "@/components/portfolio/About";
+import { Experience } from "@/components/portfolio/Experience";
+import { Projects } from "@/components/portfolio/Projects";
+import { Skills } from "@/components/portfolio/Skills";
+import { Education } from "@/components/portfolio/Education";
+import { Achievements } from "@/components/portfolio/Achievements";
+import { Services } from "@/components/portfolio/Services";
+import { Contact } from "@/components/portfolio/Contact";
+import { Footer } from "@/components/portfolio/Footer";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Your App" },
-      { name: "description", content: "Replace this with a one-sentence description of your app." },
-      { property: "og:title", content: "Your App" },
-      { property: "og:description", content: "Replace this with a one-sentence description of your app." },
+      { title: "Navya Nigam — Data Science & ML Portfolio" },
+      {
+        name: "description",
+        content:
+          "Portfolio of Navya Nigam — Computer Science undergraduate, Data Science enthusiast and Machine Learning practitioner. Projects in Deep Learning, Computer Vision, and Analytics.",
+      },
+      { property: "og:title", content: "Navya Nigam — Data Science & ML Portfolio" },
+      {
+        property: "og:description",
+        content:
+          "Computer Science undergrad building with Python, Machine Learning, and Deep Learning. Research at IIT Kanpur.",
+      },
+      { property: "og:type", content: "website" },
     ],
   }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="min-h-screen bg-background text-foreground">
+      <Nav />
+      <main>
+        <Hero />
+        <About />
+        <Projects />
+        <Skills />
+        <Experience />
+        <Education />
+        <Achievements />
+        <Services />
+        <Contact />
+      </main>
+      <Footer />
     </div>
   );
 }
