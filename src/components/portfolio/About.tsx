@@ -12,11 +12,12 @@ export function About() {
   return (
     <Section
       id="about"
-      eyebrow="About"
+      eyebrow="Behind the Data"
       title={
         <>
-          Turning <span className="italic">complex data</span> into
-          decisions that move things forward.
+          Shaping models that turn{" "}
+          <span className="italic font-display font-normal">numbers</span> into
+          decisions.
         </>
       }
     >
