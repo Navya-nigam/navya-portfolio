@@ -49,45 +49,48 @@ export function Hero() {
       <div className="absolute bottom-40 left-1/4 h-1.5 w-1.5 rounded-full bg-foreground/40" />
 
       <div className="relative mx-auto max-w-6xl px-5">
-        {/* Stage: portrait centered, serif greeting overlays on top */}
-        <div className="relative">
-          {/* Serif greeting — BEHIND the portrait */}
-          <h1 className="pointer-events-none absolute z-0 inset-x-0 top-[12%] md:top-[16%] font-display text-[18vw] md:text-[11rem] leading-[0.9] text-center text-balance text-foreground">
-            <span className="italic">Hey,</span>{" "}
-            <span className="italic">there</span>
-          </h1>
+        {/* Serif greeting */}
+        <h1 className="font-display text-[14vw] md:text-[10rem] leading-[0.95] text-center text-balance">
+          <span className="italic">Hey,</span>{" "}
+          <span className="italic">there</span>
+        </h1>
 
-          {/* Portrait — IN FRONT of the greeting */}
-          <div className="relative z-10 flex justify-center">
-            <img
-              src={heroImg}
-              alt="Navya Nigam — Data Science enthusiast"
-              width={1024}
-              height={1024}
-              fetchPriority="high"
-              className="w-[60vw] max-w-[440px] md:w-[420px] aspect-square object-cover object-top rounded-t-[45%] rounded-b-3xl"
-              style={{ maskImage: "linear-gradient(to bottom, black 85%, transparent)" }}
-            />
-          </div>
-
-          {/* Flanking copy — bottom corners */}
-          <div className="absolute z-20 left-0 bottom-[12%] md:bottom-[20%] max-w-[44%]">
-            <div className="inline-flex items-center gap-2 rounded-full bg-card/90 backdrop-blur px-3 py-1.5 text-[11px] md:text-xs shadow-soft">
+        {/* Portrait + flanking copy */}
+        <div className="relative mt-[-6vw] md:mt-[-5rem] grid grid-cols-12 items-end gap-4">
+          {/* Left side info */}
+          <div className="col-span-12 md:col-span-3 order-2 md:order-1 z-10">
+            <div className="inline-flex items-center gap-2 rounded-full bg-card/80 backdrop-blur px-3 py-1.5 text-xs shadow-soft">
               <span className="relative flex h-2 w-2">
                 <span className="absolute inset-0 rounded-full bg-accent animate-ping opacity-75" />
                 <span className="relative rounded-full bg-accent h-2 w-2" />
               </span>
-              <span className="whitespace-nowrap">Available for work</span>
+              Available for opportunities
             </div>
-            <div className="mt-3 font-mono text-[10px] md:text-xs text-muted-foreground">
+            <div className="mt-6 font-mono text-xs text-muted-foreground">
               <span className="text-accent">›</span> {typed}
               <span className="inline-block w-[1px] h-3 bg-foreground/60 ml-0.5 animate-pulse align-middle" />
             </div>
           </div>
 
-          <div className="absolute z-20 right-0 bottom-[12%] md:bottom-[20%] max-w-[40%] text-right">
-            <p className="text-[11px] md:text-sm leading-relaxed text-foreground/80">
-              Specialized in Data Science, Machine Learning & Data Analytics.
+          {/* Portrait */}
+          <div className="col-span-12 md:col-span-6 order-1 md:order-2 flex justify-center">
+            <div className="relative">
+              <img
+                src={heroImg}
+                alt="Navya Nigam — Data Science enthusiast"
+                width={1024}
+                height={1024}
+                fetchPriority="high"
+                className="w-[78vw] max-w-[520px] md:w-[440px] aspect-square object-cover object-top rounded-t-[40%] rounded-b-3xl"
+                style={{ maskImage: "linear-gradient(to bottom, black 88%, transparent)" }}
+              />
+            </div>
+          </div>
+
+          {/* Right side info */}
+          <div className="col-span-12 md:col-span-3 order-3 md:text-right z-10">
+            <p className="text-sm leading-relaxed text-foreground/80 max-w-xs md:ml-auto">
+              Specialized in Data Science, Machine Learning, Deep Learning, and Data Analytics.
             </p>
           </div>
         </div>
