@@ -1,10 +1,16 @@
 import { Section } from "./Section";
-import { useState } from "react";
-import { Copy, Check, Linkedin, Mail, Phone, ArrowUpRight } from "lucide-react";
+import { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
+import { Copy, Check, Linkedin, Mail, Phone, ArrowUpRight, Loader2 } from "lucide-react";
+import { toast } from "sonner";
 
 const EMAIL = "navyanigam36@gmail.com";
 const PHONE = "+91 70073 37285";
 const LINKEDIN = "https://linkedin.com/in/navya-nigam";
+
+const EMAILJS_SERVICE_ID = "service_qy2aqjl";
+const EMAILJS_TEMPLATE_ID = "template_h9c49jd";
+const EMAILJS_PUBLIC_KEY = "0yDNaYNCYu7mh8vHB";
 
 function CopyChip({ value, icon: Icon, label }: { value: string; icon: typeof Mail; label: string }) {
   const [copied, setCopied] = useState(false);
@@ -34,6 +40,30 @@ function CopyChip({ value, icon: Icon, label }: { value: string; icon: typeof Ma
 }
 
 export function Contact() {
+  const formRef = useRef<HTMLFormElement>(null);
+  const [sending, setSending] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (!formRef.current) return;
+    setSending(true);
+    try {
+      await emailjs.sendForm(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        formRef.current,
+        { publicKey: EMAILJS_PUBLIC_KEY },
+      );
+      toast.success("Message sent! I'll get back to you soon.");
+      formRef.current.reset();
+    } catch (err) {
+      console.error("EmailJS error:", err);
+      toast.error("Couldn't send message. Please try again or email me directly.");
+    } finally {
+      setSending(false);
+    }
+  };
+
   return (
     <Section
       id="contact"
@@ -66,11 +96,9 @@ export function Contact() {
         </div>
 
         <form
+          ref={formRef}
+          onSubmit={handleSubmit}
           className="lg:col-span-7 rounded-3xl border bg-card p-6 md:p-8 shadow-card space-y-4"
-          onSubmit={(e) => {
-            e.preventDefault();
-            window.location.href = `mailto:${EMAIL}`;
-          }}
         >
           <div className="grid sm:grid-cols-2 gap-4">
             <label className="block">
@@ -79,6 +107,7 @@ export function Contact() {
               </span>
               <input
                 required
+                name="name"
                 className="mt-2 w-full bg-transparent border-b border-border focus:border-foreground outline-none py-2 text-sm"
                 placeholder="Your name"
               />
@@ -90,6 +119,7 @@ export function Contact() {
               <input
                 required
                 type="email"
+                name="email"
                 className="mt-2 w-full bg-transparent border-b border-border focus:border-foreground outline-none py-2 text-sm"
                 placeholder="you@company.com"
               />
@@ -101,6 +131,7 @@ export function Contact() {
             </span>
             <textarea
               required
+              name="message"
               rows={5}
               className="mt-2 w-full bg-transparent border-b border-border focus:border-foreground outline-none py-2 text-sm resize-none"
               placeholder="Tell me about your project or idea…"
@@ -108,10 +139,20 @@ export function Contact() {
           </label>
           <button
             type="submit"
-            className="inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3.5 text-sm font-medium text-background hover:opacity-90 transition"
+            disabled={sending}
+            className="inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3.5 text-sm font-medium text-background hover:opacity-90 transition disabled:opacity-60"
           >
-            Send Message
-            <ArrowUpRight className="h-4 w-4" />
+            {sending ? (
+              <>
+                Sending...
+                <Loader2 className="h-4 w-4 animate-spin" />
+              </>
+            ) : (
+              <>
+                Send Message
+                <ArrowUpRight className="h-4 w-4" />
+              </>
+            )}
           </button>
         </form>
       </div>
