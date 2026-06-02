@@ -19,7 +19,6 @@ const projects = [
     link: "https://github.com/Navya-nigam/ADAS-Collision-Risk-Detection-Using-YOLO",
 },
 
-  },
   {
     year: "2024",
     title: "Real-Time Sign Language Recognition",
