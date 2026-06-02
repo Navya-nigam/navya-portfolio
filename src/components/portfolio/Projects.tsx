@@ -8,6 +8,7 @@ const projects = [
     desc: "Cloud-based customer churn analysis using Google BigQuery for SQL querying, Python for ML churn prediction modeling, and an interactive Power BI dashboard for business insights.",
     tags: ["Python", "BigQuery", "Power BI", "Scikit-learn", "SQL"],
     accent: "from-emerald-400/80 to-teal-400/60",
+    link: "https://github.com/Navya-nigam/customer-churn-analysis-dashboard",
   },
   {
     year: "2025",
@@ -43,7 +44,9 @@ export function Projects() {
         {projects.map((p, i) => (
           <a
             key={p.title}
-            href="#"
+            href={p.link || "#"}
+            target={p.link ? "_blank" : undefined}
+            rel={p.link ? "noopener noreferrer" : undefined}
             className="group relative grid md:grid-cols-12 gap-6 md:gap-8 items-stretch rounded-3xl border bg-card p-5 md:p-6 shadow-card hover:-translate-y-1 hover:shadow-soft transition-all"
           >
             <div
