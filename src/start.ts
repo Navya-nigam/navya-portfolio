@@ -20,5 +20,3 @@ const start = createStart(() => ({
   requestMiddleware: [errorMiddleware],
 }));
 
-// 👇 ADD THIS (THIS IS THE FIX)
-export default start.handler;
