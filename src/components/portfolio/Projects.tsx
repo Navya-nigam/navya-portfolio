@@ -8,6 +8,7 @@ const projects = [
     desc: "Cloud-based customer churn analysis using Google BigQuery for SQL querying, Python for ML churn prediction modeling, and an interactive Power BI dashboard for business insights.",
     tags: ["Python", "BigQuery", "Power BI", "Scikit-learn", "SQL"],
     accent: "from-emerald-400/80 to-teal-400/60",
+    link: "https://github.com/Navya-nigam/customer-churn-analysis-dashboard",
   },
   {
     year: "2025",
