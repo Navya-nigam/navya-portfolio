@@ -3,6 +3,13 @@ import { ArrowUpRight } from "lucide-react";
 
 const projects = [
   {
+    year: "2026",
+    title: "Customer Churn Analysis Dashboard",
+    desc: "Cloud-based customer churn analysis using Google BigQuery for SQL querying, Python for ML churn prediction modeling, and an interactive Power BI dashboard for business insights.",
+    tags: ["Python", "BigQuery", "Power BI", "Scikit-learn", "SQL"],
+    accent: "from-emerald-400/80 to-teal-400/60",
+  },
+  {
     year: "2025",
     title: "Rear-End ADAS System",
     desc: "Real-time vehicle detection and collision-alert generation system to enhance road safety, trained on a custom annotated dataset.",
