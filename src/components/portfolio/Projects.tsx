@@ -44,7 +44,9 @@ export function Projects() {
         {projects.map((p, i) => (
           <a
             key={p.title}
-            href="#"
+            href={p.link || "#"}
+            target={p.link ? "_blank" : undefined}
+            rel={p.link ? "noopener noreferrer" : undefined}
             className="group relative grid md:grid-cols-12 gap-6 md:gap-8 items-stretch rounded-3xl border bg-card p-5 md:p-6 shadow-card hover:-translate-y-1 hover:shadow-soft transition-all"
           >
             <div
