@@ -77,14 +77,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
+      { title: "Navya Nigam | Portfolio" },
+      { name: "description", content: "Aspiring Data Scientist showcasing projects in Python, Machine Learning, SQL, Power BI, and Data Analytics." },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { property: "og:title", content: "Navya Nigam | Portfolio" },
+      { property: "og:description", content: "Aspiring Data Scientist showcasing projects in Python, Machine Learning, SQL, Power BI, and Data Analytics." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Navya Nigam | Portfolio" },
+      { name: "twitter:description", content: "Aspiring Data Scientist showcasing projects in Python, Machine Learning, SQL, Power BI, and Data Analytics." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/82d37a85-bfe3-438e-8d5c-e260d4c7d446/id-preview-3a0b99d6--7d71d3cd-622b-4391-88d2-890893884e9d.lovable.app-1780379110698.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/82d37a85-bfe3-438e-8d5c-e260d4c7d446/id-preview-3a0b99d6--7d71d3cd-622b-4391-88d2-890893884e9d.lovable.app-1780379110698.png" },
     ],
     links: [
       {
