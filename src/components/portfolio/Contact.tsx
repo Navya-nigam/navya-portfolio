@@ -2,8 +2,8 @@ import { Section } from "./Section";
 import { useState } from "react";
 import { Copy, Check, Linkedin, Mail, Phone, ArrowUpRight } from "lucide-react";
 
-const EMAIL = "navya.nigam@example.com";
-const PHONE = "+91 00000 00000";
+const EMAIL = "navyanigam36@gmail.com";
+const PHONE = "+91 70073 37285";
 const LINKEDIN = "https://linkedin.com/in/navya-nigam";
 
 function CopyChip({ value, icon: Icon, label }: { value: string; icon: typeof Mail; label: string }) {
