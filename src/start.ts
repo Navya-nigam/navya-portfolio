@@ -1,4 +1,5 @@
 import { createStart, createMiddleware } from "@tanstack/react-start";
+
 import { renderErrorPage } from "./lib/error-page";
 
 const errorMiddleware = createMiddleware().server(async ({ next }) => {
@@ -16,9 +17,6 @@ const errorMiddleware = createMiddleware().server(async ({ next }) => {
   }
 });
 
-const start = createStart(() => ({
+export const startInstance = createStart(() => ({
   requestMiddleware: [errorMiddleware],
 }));
-
-// 👇 ADD THIS (THIS IS THE FIX)
-export default start.handler;
