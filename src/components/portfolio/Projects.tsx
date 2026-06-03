@@ -16,9 +16,6 @@ const projects = [
     desc: "Real-time vehicle detection and collision-alert generation system to enhance road safety, trained on a custom annotated dataset.",
     tags: ["Python", "YOLOv11", "Roboflow", "Colab"],
     accent: "from-orange-400/80 to-rose-400/60",
-    link: "https://github.com/Navya-nigam/ADAS-Collision-Risk-Detection-Using-YOLO",
-},
-
   },
   {
     year: "2024",
@@ -26,7 +23,6 @@ const projects = [
     desc: "CNN-based system translating hand gestures into letters and sentences at 10–15 FPS with ~95% validation accuracy on a custom dataset.",
     tags: ["TensorFlow", "OpenCV", "CNN", "Python"],
     accent: "from-amber-300/80 to-orange-400/60",
-    link: "https://github.com/Navya-nigam/sign_language"
   },
   {
     year: "2023",
@@ -34,8 +30,6 @@ const projects = [
     desc: "EDA on 128k+ Amazon sales records — cleaning, transformation, trend analysis, and business insight reporting across categories.",
     tags: ["Pandas", "NumPy", "Matplotlib", "Seaborn"],
     accent: "from-yellow-300/80 to-amber-500/60",
-    link: "https://github.com/Navya-nigam/Amazon-Sales-Analysis"
-
   },
 ];
 
